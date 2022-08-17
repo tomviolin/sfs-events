@@ -35,10 +35,6 @@ $tmpfile = "/tmp/sfs-events-$pid.ics";
 system("wget -O $tmpfile '".$_GET['url']."'");
 
 $content = file_get_contents($tmpfile);
-//$stderr = fopen('php://stderr', 'a');
-//fprintf($stderr, "buff len=%d\n",strlen($content));
-//fprintf($stderr, "%s\n",$content);
-//fclose($stderr);
 echo preg_replace("/SUMMARY:/","SUMMARY:".$prefix."",$content);
 unlink($tmpfile);
 ?>
