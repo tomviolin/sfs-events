@@ -46,7 +46,7 @@ body .fc { /* extra precedence to overcome jqui */
 }
 
 .fc-unthemed .fc-today {
-	background: #fcf8e3;
+	background: #fcf8a3;
 }
 
 .fc-highlight { /* when user is selecting cells */
@@ -679,10 +679,10 @@ a.fc-more:hover {
 
 
 .fc-sat {
-	background-color: #eeeeee;
+	background-color: #eeffff;
 }
 .fc-sun {
-	background-color: #dddddd;
+	background-color: #ddffff;
 }
 
 
@@ -1164,5 +1164,12 @@ div#calendar {
 }
 
 .fc-past {
-	background-color: #777777;
+	background-image: url('../img/crossed_out.png');
+	background-size: cover;
+	z-index: 0;
 }
+
+.fc-past * {
+	color: #888888;
+}
+

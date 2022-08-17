@@ -32,7 +32,7 @@ curl_close($ch);
 *** END cURL ****/
 $pid = getmypid();
 $tmpfile = "/tmp/sfs-events-$pid.ics";
-system("wget -O $tmpfile '".$_GET['url']."'");
+system("wget -qO $tmpfile '".$_GET['url']."' >/dev/null 2>&1");
 
 $content = file_get_contents($tmpfile);
 echo preg_replace("/SUMMARY:/","SUMMARY:".$prefix."",$content);
