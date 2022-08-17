@@ -103,12 +103,12 @@ $(document).ready(function() {
             if(event.end == null) { event.end=event.start; }
             element.qtip({
                 content: {
-                    text: '<small>'+((event.start.format("d") != event.end.format("d")) ? (event.start.format("MMM Do")
+                    text: ''+((event.start.format("d") != event.end.format("d")) ? (event.start.format("MMM Do")
                           +(((event.end.subtract(1,"seconds")).format("d") == event.start.format("d")) ? ' ' : ' - '
                           +(event.end.subtract(1,"seconds")).format("MMM Do"))) :
 		          (event.start == event.end ? event.start.format("MMM Do") : event.start.format("HH:mm")
-                          +' - '+event.end.format("HH:mm")))+'</small><br/>'+
-		          '<span class="emoji">'+event.source.prefix+'</span><b>'+event.title+'</b>'+
+                          +' - '+event.end.format("HH:mm")))+'<br/>'+
+		          '<b>'+event.title+'</b>'+
 		          ((event.description) ? ('<br/>'+event.description) : ' ')+
 		          ((event.loc) ? ('<br/><b>Venue: </b>'+event.loc) : ' ')
                 },
@@ -116,7 +116,7 @@ $(document).ready(function() {
                     classes: 'qtip-bootstrap qtip-rounded qtip-shadown qtip-light',
                 },
                 position: {
-                    my: 'top left',
+                    my: 'top center',
                     at: 'bottom center',
                 }
             });

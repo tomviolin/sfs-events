@@ -6654,7 +6654,7 @@ var DayTableMixin = /** @class */ (function (_super) {
         var dayIndices = [];
         var dayDates = [];
         var daysPerRow;
-        var firstDay=0;
+        var firstDay=7;
         var rowCnt;
         while (date.isBefore(end)) { // loop each day from start to end
             if (view.isHiddenDay(date)) {
@@ -7476,10 +7476,10 @@ var DayGrid = /** @class */ (function (_super) {
             // our firstDay option), which may not be Monday. We cannot change
             // dow, because that would affect the calendar start day as well.
             if (date._locale._fullCalendar_weekCalc === 'ISO') {
-                weekCalcFirstDoW = 1; // Monday by ISO 8601 definition
+                weekCalcFirstDoW = 7; // Monday by ISO 8601 definition
             }
             else {
-                weekCalcFirstDoW = date._locale.firstDayOfWeek();
+                weekCalcFirstDoW = 7; //date._locale.firstDayOfWeek();
             }
         }
         html += '<td class="' + classes.join(' ') + '"' +
@@ -11165,7 +11165,7 @@ var Calendar = /** @class */ (function () {
             '?firstDay', '?weekNumberCalculation'
         ], function (opts) {
             var weekNumberCalculation = opts.weekNumberCalculation;
-            var firstDay = opts.firstDay;
+            var firstDay = 7; //opts.firstDay;
             var _week;
             // normalize
             if (weekNumberCalculation === 'iso') {
@@ -11187,7 +11187,7 @@ var Calendar = /** @class */ (function () {
                 localeData._weekdaysShort = opts.dayNamesShort;
             }
             if (firstDay == null && weekNumberCalculation === 'ISO') {
-                firstDay = 1;
+                firstDay = 0;
             }
             if (firstDay != null) {
                 _week = Object.create(localeData._week); // _week: { dow: # }
