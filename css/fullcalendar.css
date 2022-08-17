@@ -1162,3 +1162,7 @@ be a descendant of the grid when it is being dragged.
 div#calendar {
 	xheight:80%;
 }
+
+.fc-past {
+	background-color: #777777;
+}
