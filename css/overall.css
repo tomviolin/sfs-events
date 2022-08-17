@@ -1,10 +1,9 @@
 body {
   font-family: 'Archivo Narrow';
   font-size: 17px;
-  max-width: 1200px;
-  margin: 0 auto 2em;
-  padding: 0.5em;
-  background-color: #ddeeff;
+  margin: 0;
+  padding: 0;
+  xbackground-color: #ddeeff;
 }
 
 span.emoji {

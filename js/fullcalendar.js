@@ -6654,7 +6654,7 @@ var DayTableMixin = /** @class */ (function (_super) {
         var dayIndices = [];
         var dayDates = [];
         var daysPerRow;
-        var firstDay;
+        var firstDay=0;
         var rowCnt;
         while (date.isBefore(end)) { // loop each day from start to end
             if (view.isHiddenDay(date)) {

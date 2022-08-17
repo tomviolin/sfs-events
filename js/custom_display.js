@@ -42,7 +42,7 @@ function load_ics(ics, cpt){
     // calendar legend
     document.getElementById("legend-feeds").insertAdjacentHTML('beforeend', "<div class='calendar-feed'>" +
         "<button class='fc-event' id='copyLink"+cpt+"' style='_xdisplay:inline-block; _xpadding-top:0; _xpadding-left:3px; _xborder-radius:3px; background-color:"+ics.event_properties['color']+"; font-size:16px;'>"+
-		"<span class='emoji'>"+ics.prefix+"</span> "+ics.title+
+		""+ics.title+
 	" </button></div>");
 
 
@@ -110,8 +110,7 @@ $(document).ready(function() {
                           +' - '+event.end.format("HH:mm")))+'</small><br/>'+
 		          '<span class="emoji">'+event.source.prefix+'</span><b>'+event.title+'</b>'+
 		          ((event.description) ? ('<br/>'+event.description) : ' ')+
-		          ((event.loc) ? ('<br/><b>Venue: </b>'+event.loc) : ' ')+
-			  '<span class="emoji">'+((event.source.prefix)+'</span>' ? ('<br/>Source: '+event.source.prefix) : ' ')
+		          ((event.loc) ? ('<br/><b>Venue: </b>'+event.loc) : ' ')
                 },
                 style: {
                     classes: 'qtip-bootstrap qtip-rounded qtip-shadown qtip-light',

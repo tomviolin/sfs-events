@@ -1160,5 +1160,5 @@ be a descendant of the grid when it is being dragged.
 
 
 div#calendar {
-	height:80%;
+	xheight:80%;
 }
