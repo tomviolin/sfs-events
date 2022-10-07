@@ -1171,7 +1171,7 @@ div#calendar {
 	xbackground-image: url('../img/crossed_out.png');
 	xbackground-size: cover;
 	xz-index: 0;
-	background-color: #eeeeee;
+	background-color: #eeeeee80;
 }
 
 .fc-past * {
