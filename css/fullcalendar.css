@@ -1168,9 +1168,9 @@ div#calendar {
 }
 
 .fc-past {
-	background-image: url('../img/crossed_out.png');
-	background-size: cover;
-	z-index: 0;
+	xbackground-image: url('../img/crossed_out.png');
+	xbackground-size: cover;
+	xz-index: 0;
 }
 
 .fc-past * {
