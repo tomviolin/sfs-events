@@ -1,7 +1,7 @@
 // Edit your ics sources here
 ics_sources = [
 	{url:'/proxy.php?url='+encodeURI('http://uwm.edu/freshwater/events/?ical=1'), title:'SFS Web Events', prefix:'💧', event_properties:{color: '#FFbbFF'}},
-	{url:'/proxy.php?url='+encodeURI('https://panthers.sharepoint.com/:u:/s/SFSReservations/ESR-VJBB6-FJowNFP1Y8I2EBaKFYYKDNfwCJQ0HnR9fggA?e=kNSU92'), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
+	{url:'/proxy.php?url='+encodeURI('https://panthers.sharepoint.com/:u:/s/SFSReservations/EVNzyA8WSLlArxqvObj64OABXDugCXC7-xXCfLjbshF6KQ?e=eudWcv'), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
 	{url:'/proxy.php?url='+encodeURI('https://calendar.google.com/calendar/ical/sfs.neeskay%40gmail.com/public/basic.ics'),title:'R/V Neeskay', prefix:'⛵', event_properties:{color:'#cceeFF'}},
 	{url: '/proxy.php?url='+encodeURI('https://calendar.google.com/calendar/ical/sfs.events.calendar%40gmail.com/public/basic.ics'), title:'SFS Internal Events', prefix:'🏢', event_properties:{color:'#ffddbb'}}
 ]
