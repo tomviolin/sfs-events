@@ -525,7 +525,7 @@ temporary rendered events).
 	text-shadow: 
 		0.1px 0.1px 4.5px rgba(255,255,255,0.6),
 		0.1px 0.1px 4.5px rgba(255,255,255,0.6);
-	line-height: 1.89ex;
+	line-height: 2.0ex;
 	text-decoration: none; /* if <a> has an href */
 }
 
