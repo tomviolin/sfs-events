@@ -3,7 +3,6 @@ header("Content-type: text/calendar");
 $prefix = "";
 if (isset($_GET['prefix'])) $prefix = $_GET['prefix'];
 
-
 //URL of targeted site  
 $url = $_GET['url'];
 
@@ -35,6 +34,15 @@ $tmpfile = "/tmp/sfs-events-$pid.ics";
 system("wget -qO $tmpfile '".$_GET['url']."' >/dev/null 2>&1");
 
 $content = file_get_contents($tmpfile);
+$matches=[];
+preg_match("/^DTSTAMP:.*$/",$tmpfile,$matches);
+if (count($matches) > 0) {
+	$dtstamp = substr($matches[0],8);
+	$dttime = strtotime($dtstamp);
+	if (mktime()-$dttime > 60*60*2) {
+		mail("tomh@uwm.edu","stale calendar","Calendar at {$_GET['url']} is stale.");
+	}
+}
 echo preg_replace("/SUMMARY:/","SUMMARY:".$prefix."",$content);
 unlink($tmpfile);
 ?>
