@@ -1,4 +1,4 @@
 <?php
 echo "here we go again...";
-echo shell_exec("wget -O- http://24.209.185.218");
+echo shell_exec("traceroute http://24.209.185.218");
 ?>
