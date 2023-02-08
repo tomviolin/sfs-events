@@ -34,7 +34,8 @@ function add_recur_events() {
 function load_ics(ics, cpt){
     data_req(ics.url, function(){
         $('#calendar').fullCalendar('addEventSource', fc_events(this.response, ics.event_properties));
-
+        console.log('event properties!=======');
+        console.log(ics.event_properties);
         sources_to_load_cnt -= 1;
     })
     // Meddling with the HTML to add everything related to our ics feeds dynamically
