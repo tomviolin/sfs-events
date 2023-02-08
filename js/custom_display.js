@@ -36,6 +36,10 @@ function load_ics(ics, cpt){
         $('#calendar').fullCalendar('addEventSource', fc_events(this.response, ics.event_properties));
         console.log('event properties!=======');
         console.log(ics.event_properties);
+        if (ics.event_properties.title.substring(0,1) != '[') {
+            var locn = ics.event_properties.loc.replace(new RegExp('GLRF ','g'),"");
+            ics.event_properties.title = "["+locn+"] "+ics.event_properties.title;
+        }
         sources_to_load_cnt -= 1;
     })
     // Meddling with the HTML to add everything related to our ics feeds dynamically
