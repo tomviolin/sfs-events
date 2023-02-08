@@ -34,17 +34,6 @@ function add_recur_events() {
 function load_ics(ics, cpt){
     data_req(ics.url, function(){
         $('#calendar').fullCalendar('addEventSource', fc_events(this.response, ics.event_properties));
-        console.log('event properties!=======');
-        console.log(ics.event_properties);
-        if (ics.event_properties.title) {
-            //if (ics.event_properties.title.substring(0,1) !== "[") {
-                var locn = ics.event_properties.loc.replace(new RegExp('GLRF ','g'),"");
-                ics.event_properties.title = "["+locn+"] "+ics.event_properties.title;
-            //}
-            ics.event_properties.title = ics.event_properties.title.replace(new RegExp('FRSHWTR',''),'FW');
-            console.log('event properties AFTER!=======');
-            console.log(ics.event_properties);
-        }
         sources_to_load_cnt -= 1;
     })
     // Meddling with the HTML to add everything related to our ics feeds dynamically
@@ -120,7 +109,7 @@ $(document).ready(function() {
                           +(event.end.subtract(1,"seconds")).format("MMM Do"))) :
 		          (event.start == event.end ? event.start.format("MMM Do") : event.start.format("HH:mm")
                           +' - '+event.end.format("HH:mm")))+'<br/>'+
-		          '<b>'+event.title+'</b>'+
+		          '<b>['+event.loc+"] "event.title+'</b>'+
 		          ((event.description) ? ('<br/>'+event.description) : ' ')+
 		          ((event.loc) ? ('<br/><b>Venue: </b>'+event.loc) : ' ')
                 },
