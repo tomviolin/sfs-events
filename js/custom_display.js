@@ -36,14 +36,16 @@ function load_ics(ics, cpt){
         $('#calendar').fullCalendar('addEventSource', fc_events(this.response, ics.event_properties));
         console.log('event properties!=======');
         console.log(ics.event_properties);
-        //if (ics.event_properties.title.substring(0,1) !== "[") {
-            var locn = ics.event_properties.loc.replace(new RegExp('GLRF ','g'),"");
-            ics.event_properties.title = "["+locn+"] "+ics.event_properties.title;
-        //}
-        ics.event_properties.title = ics.event_properties.title.replace(new RegExp('FRSHWTR',''),'FW');
-        console.log('event properties AFTER!=======');
+        if (ics.event_properties.title) {
+            //if (ics.event_properties.title.substring(0,1) !== "[") {
+                var locn = ics.event_properties.loc.replace(new RegExp('GLRF ','g'),"");
+                ics.event_properties.title = "["+locn+"] "+ics.event_properties.title;
+            //}
+            ics.event_properties.title = ics.event_properties.title.replace(new RegExp('FRSHWTR',''),'FW');
+            console.log('event properties AFTER!=======');
+            console.log(ics.event_properties);
+        }
         sources_to_load_cnt -= 1;
-        console.log(ics.event_properties);
     })
     // Meddling with the HTML to add everything related to our ics feeds dynamically
     // hidden ics feeds
