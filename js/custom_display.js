@@ -80,6 +80,7 @@ $(document).ready(function() {
           if (event.title) {
               if (event.loc) {
                   event.title = '[' + event.loc + '] ' + event.title;
+                  console.log('new event title: "'+event.title+'"');
               }
           }
 
