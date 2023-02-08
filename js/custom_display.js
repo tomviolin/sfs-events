@@ -109,7 +109,7 @@ $(document).ready(function() {
                           +(event.end.subtract(1,"seconds")).format("MMM Do"))) :
 		          (event.start == event.end ? event.start.format("MMM Do") : event.start.format("HH:mm")
                           +' - '+event.end.format("HH:mm")))+'<br/>'+
-		          '<b>['+event.loc+"] "event.title+'</b>'+
+		          '<b>['+event.loc.replace('GLRF ','')+"] "+event.title.replace('FRSHWTR ','FW ')+'</b>'+
 		          ((event.description) ? ('<br/>'+event.description) : ' ')+
 		          ((event.loc) ? ('<br/><b>Venue: </b>'+event.loc) : ' ')
                 },
