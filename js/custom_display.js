@@ -74,15 +74,8 @@ $(document).ready(function() {
         },
 	navLinks: true,
 	editable: false,
-        eventLimit: true, // allow "more" link when too many events
-        eventRender: function(event, element, view) {
-          console.log(event);
-          if (event.title) {
-              if (event.loc) {
-                  event.title = '[' + event.loc + '] ' + event.title;
-                  console.log('new event title: "'+event.title+'"');
-              }
-          }
+    eventLimit: true, // allow "more" link when too many events
+    eventRender: function(event, element, view) {
 
 	  if(view.name == "listMonth" || view.name == "listWeek") {
             element.find('.fc-list-item-title').append('<div style="margin-top:5px;"></div><span style="font-size: 0.9em">'+(event.description || 'no description')+'</span>'+((event.loc) ? ('<span style="margin-top:5px;display: block"><b>Venue: </b>'+event.loc+'</span>') : ' ')+'</div>');
