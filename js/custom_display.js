@@ -40,6 +40,7 @@ function load_ics(ics, cpt){
             var locn = ics.event_properties.loc.replace(new RegExp('GLRF ','g'),"");
             ics.event_properties.title = "["+locn+"] "+ics.event_properties.title;
         }
+        ics.event_properties.title = ics.event_properties.title.replace(new RegExp('FRSHWTR',''),'FW');
         sources_to_load_cnt -= 1;
     })
     // Meddling with the HTML to add everything related to our ics feeds dynamically
