@@ -7,9 +7,9 @@ function ical_events(ical, event_callback, recur_event_callback) {
 function jcal_events(jcal, event_callback, recur_event_callback) {
     for (event of new ICAL.Component(jcal).getAllSubcomponents('vevent')) {
         console.log(event);
-        if (event.hasProperty('title')) {
+        if (event.hasProperty('summary')) {
             if (event.hasProperty('location')) {
-                ttlstr = event.getPropertyValue('title');
+                ttlstr = event.getPropertyValue('summary');
                 locstr = event.getPropertyValue('location');
                 console.log('title: '+ttlstr+' location: '+locstr);
             }
