@@ -12,6 +12,8 @@ function jcal_events(jcal, event_callback, recur_event_callback) {
                 ttlstr = event.getFirstPropertyValue('summary');
                 locstr = event.getFirstPropertyValue('location');
                 console.log('title: '+ttlstr+' location: '+locstr);
+                updatePropertyWithValue('summary','['+locstr+']');
+      }
             }
         }
         if (event.hasProperty('rrule')) {
