@@ -10,7 +10,7 @@ function jcal_events(jcal, event_callback, recur_event_callback) {
         console.log(event.getAllProperties());
         if (event.hasProperty('summary')) {
             if (event.hasProperty('location')) {
-                var event_title = event.getFirstPropertyValue("Event Title");
+                var event_title = event.getFirstPropertyValue("x-trumba-customfield");
                 console.log(event_title);
                 ttlstr = event.getFirstPropertyValue('summary');
                 locstr = event.getFirstPropertyValue('location');
