@@ -14,7 +14,7 @@ function jcal_events(jcal, event_callback, recur_event_callback) {
                 console.log('title: '+ttlstr+' location: '+locstr);
                 ttlstr = ttlstr.replace(new RegExp('FRSHWTR ','g'),'FW ');
                 locstr = locstr.replace(new RegExp('GLRF ','g'),'');
-                updatePropertyWithValue('summary','['+locstr+'] '+ttlstr);
+                event.updatePropertyWithValue('summary','['+locstr+'] '+ttlstr);
             }
         }
         if (event.hasProperty('rrule')) {
