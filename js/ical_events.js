@@ -8,9 +8,14 @@ function jcal_events(jcal, event_callback, recur_event_callback) {
     for (event of new ICAL.Component(jcal).getAllSubcomponents('vevent')) {
         console.log(event);
         console.log(event.getAllProperties());
+        for (prop in event.getAllProperties()) {
+            jc = prop.jCal;
+            console.log(jc);
+        }
+
         if (event.hasProperty('summary')) {
             if (event.hasProperty('location')) {
-                var event_title = event.getFirstPropertyValue("x-trumba-customfield");
+                
                 console.log(event_title);
                 ttlstr = event.getFirstPropertyValue('summary');
                 locstr = event.getFirstPropertyValue('location');
