@@ -9,8 +9,8 @@ function jcal_events(jcal, event_callback, recur_event_callback) {
         console.log(event);
         if (event.hasProperty('summary')) {
             if (event.hasProperty('location')) {
-                ttlstr = event.getPropertyValue('summary');
-                locstr = event.getPropertyValue('location');
+                ttlstr = event.getFirstPropertyValue('summary');
+                locstr = event.getFirstPropertyValue('location');
                 console.log('title: '+ttlstr+' location: '+locstr);
             }
         }
