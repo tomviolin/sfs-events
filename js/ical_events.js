@@ -13,6 +13,7 @@ function jcal_events(jcal, event_callback, recur_event_callback) {
                 locstr = event.getFirstPropertyValue('location');
                 console.log('title: '+ttlstr+' location: '+locstr);
                 ttlstr = ttlstr.replace(new RegExp('FRSHWTR ','g'),'FW ');
+                ttlstr = ttlstr.replace(new RegExp('CS [0-9]+$',''),'');
                 locstr = locstr.replace(new RegExp('GLRF ','g'),'');
                 event.updatePropertyWithValue('summary','['+locstr+'] '+ttlstr);
             }
