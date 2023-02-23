@@ -1,7 +1,7 @@
 // Edit your ics sources here
 ics_sources = [
 	{url:'/proxy.php?url='+encodeURI('http://uwm.edu/freshwater/events/?ical=1'), title:'SFS Web Events', prefix:'💧', event_properties:{color: '#FFbbFF'}},
-	{url:'/proxy.php?url='+encodeURI('https://25livepub.collegenet.com/calendars/uwm-sfs-all-events.ics?weeks=52'), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
+	{url:'/proxy.php?url='+encodeURI('https://25livepub.collegenet.com/calendars/uwm-sfs-all-events.ics?startdate=20230201&weeks=52'), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
 	{url:'/proxy.php?url='+encodeURI('https://25livepub.collegenet.com/calendars/uwm-sfs-all-events.ics?startdate=20230101&enddate=20231231'), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
 	//{url:'/proxy.php?url='+encodeURI('https://panthers.sharepoint.com/:u:/s/SFSReservations/EUOq58_EkORIrjNUmg7nZ8gBVOUY04mdOpL8iMZXzQzgxA?e=5m1Rd2'), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
 	//{url:'https://sfsfiles01.sfs.uwm.edu/calendar.php', title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
