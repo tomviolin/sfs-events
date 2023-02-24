@@ -21,7 +21,7 @@ function jcal_events(jcal, event_callback, recur_event_callback) {
                 ttlstr = ttlstr.replace(new RegExp('FRSHWTR ','g'),'FW ');
                 ttlstr = ttlstr.replace(new RegExp('CS [0-9]+$',''),'');
                 locstr = locstr.replace(new RegExp('GLRF ','g'),'');
-                if (ttlstr.substr(0,1) !== "[") {
+                if (ttlstr.substr(0,1) !== "[" && locstr.substr(0,4) === "GLRF") {
                     event.updatePropertyWithValue('summary','['+locstr+'] '+ttlstr);
                 }
             }
