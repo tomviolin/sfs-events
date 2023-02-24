@@ -21,7 +21,9 @@ function jcal_events(jcal, event_callback, recur_event_callback) {
                 ttlstr = ttlstr.replace(new RegExp('FRSHWTR ','g'),'FW ');
                 ttlstr = ttlstr.replace(new RegExp('CS [0-9]+$',''),'');
                 locstr = locstr.replace(new RegExp('GLRF ','g'),'');
-                event.updatePropertyWithValue('summary','['+locstr+'] '+ttlstr);
+                if (ttlstr.substr(0,1) !== "[") {
+                    event.updatePropertyWithValue('summary','['+locstr+'] '+ttlstr);
+                }
             }
         }
         if (event.hasProperty('rrule')) {
