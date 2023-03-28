@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+
+header("Referrer-Policy: no-referrer");
+header("Cross-Origin-Opener-Policy: unsafe-none");
+header("Cross-Origin-Embedder-Policy: unsafe-none");
+header("Cross-Origin-Resource-Policy: cross-origin");
+?><!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Referrer-Policy" content="no-referrer">
