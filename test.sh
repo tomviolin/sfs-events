@@ -1,0 +1,24 @@
+curl 'https://calendar.google.com/calendar/u/0/embed?src=e8e4d8c6474e67b7b5f83c80f7cf29acb183864ed61f634e4d106e661713c46a@group.calendar.google.com&ctz=America/Chicago' \
+  -H 'authority: calendar.google.com' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'cache-control: no-cache' \
+  -H 'cookie: AEC=AUEFqZdEhh9CheRW1X9iH8RbiDHL-loVHEhMpB9JvFs0AViFyfRYVN1iSZ4; 1P_JAR=2023-03-27-07; SID=VAjkbhfm-0VQlRV1VfZU7mLSG9IG0y4itGGYy0Y0_hA5iu5GQ786AARX6XmPxSmj59gTXw.; __Secure-1PSID=VAjkbhfm-0VQlRV1VfZU7mLSG9IG0y4itGGYy0Y0_hA5iu5GXAGFnCOKt54DX6k3k4Iv2Q.; __Secure-3PSID=VAjkbhfm-0VQlRV1VfZU7mLSG9IG0y4itGGYy0Y0_hA5iu5GoGQfGy7K_SMx-gi16Q4TeA.; HSID=AE_LT7MPKcfCBVP9y; SSID=AlsRyEJFyp5CLB5SG; APISID=O2dNPJFJUAK9bYnY/AwSiLHKSt7Lg2ZcmP; SAPISID=l_8HdNavta_6LbyP/AAUi7Ylu-hsjRqG2v; __Secure-1PAPISID=l_8HdNavta_6LbyP/AAUi7Ylu-hsjRqG2v; __Secure-3PAPISID=l_8HdNavta_6LbyP/AAUi7Ylu-hsjRqG2v; OSID=VAjkbhcBpcDS7dZgXBLv3As-7QngTb-Bt6iU1RrWpa7Oam6MLc8U3VF17neJlCrFvqMQRQ.; __Secure-OSID=VAjkbhcBpcDS7dZgXBLv3As-7QngTb-Bt6iU1RrWpa7Oam6MRR_AZJsC5VsXuBIU1Dg1iw.; OGPC=19026792-1:19008544-2:; OGP=-19008544:; NID=511=a_epqPg0fr3TEFL-42-JMHVADwA-ajdd2oLNXVkW_SGmQpQ5sUdm2QBdU0DSSgRpezID6YIgWV5Kcqqa7gye4pJmTttVbuU0yFGLl-3KxF6eta2lYIiQBCuPD7XhSHF2JGDfWDsj4A8K8FlzZwrZQfnLEdXePWx3c_W5-U4FkRE4AXMcJUUzyHrdaLzSf_Ki2BiChhHR8jH9DxEWBvOu9kf7Q3wZX1Qg9_0ZzEPMW99OIUmhcnj2i68Cskyd3v0C7ndlYt13R5dd9F2NHFgZt8GwmkgJB35k6nHjhb-Q_SFJTOUdsVeYL7YZ6m0Ul0OBJFKok0uB73MQQ3GMAk4Xqjvj21JvTsFUr_zJF3ofDD8AE7TJrP8nS6hDbg5V8tNSdioLrXoM4bFo1YzjgCPN; COMPASS=calendar=CgAQppyuoQYaQAAJa4lXrvl7k33kg_jLcItoj6dUqFs8uvH-8DV54xYF3J-JtATyZ6ljn05OeSrBEZsqrXhhpSp9x6jgQKJ_RaogASpKCAIQspyuoQYaQAAJa4lXv1U6i4lqAzlufy-CITD55Eh-9wpAdcPmya2JlJIZctxL3u73kHIHK3RmIvERIvjCAYTONv5S2DCIdds; SIDCC=AFvIBn9ytlxLZVbWVuiG1NwL2J4o15OC0B3tL24GrJloSkZ6GmLVySqg6wdJvZ6bRVvuT4F_t70; __Secure-1PSIDCC=AFvIBn_hABYemS0HCrI_WdHAoNplGsN1GXGezFrFyUNBIkb07HasCOdTMbm3ArE78d9MCpuIzA; __Secure-3PSIDCC=AFvIBn8STy27Ocu1-MhiFCjTNA2rxQJsR9q1bPySc2GlFygDFg_tNHXL5fllYD28TQvtVczGVA' \
+  -H 'pragma: no-cache' \
+  -H 'sec-ch-ua: "Microsoft Edge";v="111", "Not(A:Brand";v="8", "Chromium";v="111"' \
+  -H 'sec-ch-ua-arch: "x86"' \
+  -H 'sec-ch-ua-bitness: "64"' \
+  -H 'sec-ch-ua-full-version: "111.0.1661.62"' \
+  -H 'sec-ch-ua-full-version-list: "Microsoft Edge";v="111.0.1661.62", "Not(A:Brand";v="8.0.0.0", "Chromium";v="111.0.5563.149"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-model: ""' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-ch-ua-platform-version: "14.0.0"' \
+  -H 'sec-ch-ua-wow64: ?0' \
+  -H 'sec-fetch-dest: document' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'sec-fetch-site: none' \
+  -H 'sec-fetch-user: ?1' \
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62' \
+  --compressed

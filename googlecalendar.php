@@ -2,6 +2,8 @@
 <?php
 $src = $_GET['src'];
 $ctz = $_GET['ctz'];
+header("Content-type: text/html");
+echo file_get_contents("https://calendar.google.com/calendar/u/0/embed?src=e8e4d8c6474e67b7b5f83c80f7cf29acb183864ed61f634e4d106e661713c46a@group.calendar.google.com&ctz=America/Chicago");
 
-file_put_contents(urlencode("https://calendar.google.com/calendar/embed?src=$src&ctz=$ctz"));
+
 ?>
