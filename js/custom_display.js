@@ -103,15 +103,29 @@ $(document).ready(function() {
               });
 	  } else {
             if(event.end == null) { event.end=event.start; }
+	    if (!element.loc) element.loc = " N/A ";
             element.qtip({
                 content: {
-                    text: ''+((event.start.format("d") != event.end.format("d")) ? (event.start.format("MMM Do")
-                          +(((event.end.subtract(1,"seconds")).format("d") == event.start.format("d")) ? ' ' : ' - '
-                          +(event.end.subtract(1,"seconds")).format("MMM Do"))) :
-		          (event.start == event.end ? event.start.format("MMM Do") : event.start.format("HH:mm")
-                          +' - '+event.end.format("HH:mm")))+'<br/>'+
-		          '<b>['+event.loc.replace('GLRF ','')+"] "+event.title.replace('FRSHWTR ','FW ')+'</b>'+
-		          ((event.description) ? ('<br/>'+event.description) : ' ')+
+                    text: ''+(
+			    (event.start.format("d") != event.end.format("d")) ? 
+			    	(event.start.format("MMM Do")
+                          	+(((event.end.subtract(1,"seconds")).format("d") == event.start.format("d")) ? 
+			            ' ' 
+			        : 
+			           ' - '+(event.end.subtract(1,"seconds")).format("MMM Do")
+				 )
+				) 
+			  :
+		            (event.start == event.end ? 
+                                event.start.format("MMM Do") 
+			    : 
+			        event.start.format("HH:mm")
+                                     +' - '+event.end.format("HH:mm")))+'<br/>'
+	 	                     +'<b>['+event.loc.replace('GLRF ','')+"] "
+			             +event.title.replace('FRSHWTR ','FW ')+'</b>'
+		                     +((event.description) ? 
+			                 ('<br/>'+event.description) 
+				     : ' ')+
 		          ((event.loc) ? ('<br/><b>Venue: </b>'+event.loc) : ' ')
                 },
                 style: {
