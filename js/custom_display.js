@@ -6,7 +6,7 @@ ics_sources = [
 	{url:'/proxy.php?url='+encodeURI('https://panthers.sharepoint.com/:u:/s/SFSReservations/EUOq58_EkORIrjNUmg7nZ8gBVOUY04mdOpL8iMZXzQzgxA?e=5m1Rd2'), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
 	//{url:'https://sfsfiles01.sfs.uwm.edu/calendar.php', title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}},
 	{url:'/proxy.php?url='+encodeURI('https://calendar.google.com/calendar/ical/sfs.neeskay%40gmail.com/public/basic.ics'),title:'R/V Neeskay', prefix:'⛵', event_properties:{color:'#cceeFF'}},
-	{url: '/proxy.php?url='+encodeURI('https://calendar.google.com/calendar/ical/sfs.events.calendar%40gmail.com/public/basic.ics'), title:'SFS Internal Events', prefix:'🏢', event_properties:{color:'#ffddbb'}}
+	//{url: '/proxy.php?url='+encodeURI('https://calendar.google.com/calendar/ical/sfs.events.calendar%40gmail.com/public/basic.ics'), title:'SFS Internal Events', prefix:'🏢', event_properties:{color:'#ffddbb'}}
 ]
 
 
