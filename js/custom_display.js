@@ -121,7 +121,7 @@ $(document).ready(function() {
 			    : 
 			        event.start.format("HH:mm")
                                      +' - '+event.end.format("HH:mm")))+'<br/>'
-	 	                     +'<b>['+event.loc.replace('GLRF ','')+"] "
+	 	                     +'<b>['+(event.loc?event.loc.replace('GLRF ',''):"")+"] "
 			             +event.title.replace('FRSHWTR ','FW ')+'</b>'
 		                     +((event.description) ? 
 			                 ('<br/>'+event.description) 
