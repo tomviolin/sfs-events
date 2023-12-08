@@ -68,8 +68,10 @@ button {
 a.fc-time-grid-event {
 	border-radius: 0px;
 }
-
 a.fc-time-grid-event div.fc-content {
+	border-radius: 0px;
+}
+a.fc-time-grid-event div.fc-bg {
 	border: 1px solid #3a87ad;
 	border-radius: 0px;
 }
