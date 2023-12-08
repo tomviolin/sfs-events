@@ -75,5 +75,8 @@ a.fc-time-grid-event div.fc-bg {
 	border: 1px solid #3a87ad;
 	border-radius: 0px;
 }
-
+a.fc-time-grid-event div.fc-bg:hover {
+	background-color: #3a87ad;
+	shadow: 0px 0px 10px #3a87ad;
+}
 
