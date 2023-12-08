@@ -97,8 +97,8 @@ $(document).ready(function() {
                       classes: 'qtip-bootstrap qtip-rounded qtip-shadown qtip-light',
                   },
                   position: {
-                      my: 'center left',
-                      at: 'center left',
+                      my: 'top center',
+                      at: 'bottom center',
                   }
               });
 	  } else {
