@@ -104,8 +104,6 @@ $(document).ready(function() {
 	  } else {
             if(event.end == null) { event.end=event.start; }
 	    if (!element.loc) element.loc = " N/A ";
-            element.style.backgroundColor = event.color;
-	    element.style.shadow = "black 5px 5px 0px 0px";
             element.qtip({
                 content: {
                     text: ''+(
