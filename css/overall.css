@@ -64,3 +64,14 @@ button {
   vertical-align: middle;
   border-radius: 4px;
 }
+
+a.fc-time-grid-event {
+	border: 1px solid #3a87ad;
+	border-radius: 0px;
+}
+
+a.fc-time-grid-event div.fc-content {
+	border-radius: 0px;
+}
+
+
