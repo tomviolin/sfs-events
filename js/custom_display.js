@@ -98,7 +98,7 @@ $(document).ready(function() {
                   },
                   position: {
                       my: 'center left',
-                      at: 'center right',
+                      at: 'center left',
                   }
               });
 	  } else {
