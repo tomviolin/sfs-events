@@ -1,8 +1,7 @@
 // Edit your ics sources here
 if (document.location.hash == '#NWQB') {
 	ics_sources = [
-		//{url:'/proxy.php?url='+encodeURI(encodeURI('https://25livepub.collegenet.com/calendars/uwm-sfs-all-events.ics?previousweeks=4&search=NWQB')), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}}
-		{url:'https://25livepub.collegenet.com/calendars/uwm-sfs-all-events.ics?previousweeks=4&search=NWQB', title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}}
+		{url:'/proxy.php?url='+encodeURI(encodeURI('https://25livepub.collegenet.com/calendars/uwm-sfs-all-events.ics?search=NWQB')), title:'ROAR Room Reservations', prefix:'🚪', event_properties:{color: '#ccffcc'}}
 	]
 } else {
 	ics_sources = [
