@@ -1,21 +1,38 @@
 <html>
 <body>
-	<script>
-		const viewer = new PhotoSphereViewer.Viewer({
-			plugins: [
-				[PhotoSphereViewer.VisibleRangePlugin, {
-					usePanoData: true
-	        		}],
-    			],
-			container: document.querySelector('#viewer'),
-			panorama: 'GLRF3080-1.jpg',
-			navbar: [
-				'zoom',
-				'fullscreen',
-				'visible-range',
-			]
-		});
-	</script>
+<head>
+    <!-- for optimal display on high DPI devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+</head>
+<body>
+<!-- the viewer container must have a defined size -->
+<div id="viewer" style="width: 100vw; height: 100vh;"></div>
+
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
+	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range/index.module.js"
+        }
+    }
+</script>
+
+<script type="module">
+    import { Viewer } from '@photo-sphere-viewer/core';
+
+    const viewer = new Viewer({
+        container: document.querySelector('#viewer'),
+        panorama: 'GLRF3080-1.jpg',
+	navbar: [
+		'zoom',
+		'fullscreen',
+		'visible-range'
+	]
+    });
+</script>
 </body>
 </html>
 
