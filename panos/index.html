@@ -1,0 +1,21 @@
+<html>
+<body>
+	<script>
+		const viewer = new PhotoSphereViewer.Viewer({
+			plugins: [
+				[PhotoSphereViewer.VisibleRangePlugin, {
+					usePanoData: true
+	        		}],
+    			],
+			container: document.querySelector('#viewer'),
+			panorama: 'GLRF3080-1.jpg',
+			navbar: [
+				'zoom',
+				'fullscreen',
+				'visible-range',
+			]
+		});
+	</script>
+</body>
+</html>
+
