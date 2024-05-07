@@ -14,15 +14,15 @@
     {
         "imports": {
             "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
-            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
-	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range/index.module.js"
+            "@photo-sphere-viewer/core":          "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
+	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin/index.module.js"
         }
     }
 </script>
 
 <script type="module">
     import { Viewer } from '@photo-sphere-viewer/core';
-
+    import { VisibleRangePlugin } from '@photo-sphere-viewer/visible-range';
     const viewer = new Viewer({
         container: document.querySelector('#viewer'),
         panorama: 'GLRF3080-1.jpg',
@@ -30,7 +30,14 @@
 		'zoom',
 		'fullscreen',
 		'visible-range'
+	],
+	plugins: [
+		[VisibleRangePlugin, {
+			setRangesFromPanoData: true,
+			verticalRange: [0,0]
+		}]
 	]
+
     });
 </script>
 </body>
