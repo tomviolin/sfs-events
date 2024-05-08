@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <body>
 <head>
@@ -8,37 +9,33 @@
 </head>
 <body>
 <!-- the viewer container must have a defined size -->
-<div id="viewer" style="width: 100vw; height: 100vh;"></div>
+<div id="viewer" style="height: 100vh; width:100vw;"></div>
 
 <script type="importmap">
     {
         "imports": {
             "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
-            "@photo-sphere-viewer/core":          "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
 	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin/index.module.js"
         }
     }
 </script>
-
+<!-- //	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin/index.module.js"
+-->
 <script type="module">
     import { Viewer } from '@photo-sphere-viewer/core';
     import { VisibleRangePlugin } from '@photo-sphere-viewer/visible-range';
+    //window.Viewer = Viewer;
     const viewer = new Viewer({
         container: document.querySelector('#viewer'),
-        panorama: 'GLRF3080-1.jpg',
-	defaultYaw : '180deg',
-	navbar: [
-		'zoom',
-		'fullscreen',
-		'visible-range'
-	],
+        panorama: document.location.pathname + '/' + document.location.hash.substr(1)+'?refresh='+Math.random(),
+	//defaultYaw : '180deg',
 	plugins: [
 		[VisibleRangePlugin, {
 			setRangesFromPanoData: true,
 			verticalRange: [0,0]
 		}]
 	]
-
     });
 </script>
 </body>

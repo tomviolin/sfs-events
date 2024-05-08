@@ -9,7 +9,7 @@
       <GPano:CroppedAreaImageHeightPixels>469</GPano:CroppedAreaImageHeightPixels>
       <GPano:CroppedAreaLeftPixels>0</GPano:CroppedAreaLeftPixels>
       <GPano:CroppedAreaTopPixels>840</GPano:CroppedAreaTopPixels>
-      <GPano:PoseHeadingDegrees>0</GPano:PoseHeadingDegrees>
+      <GPano:PoseHeadingDegrees>100</GPano:PoseHeadingDegrees>
       <GPano:PosePitchDegrees>0</GPano:PosePitchDegrees>
       <GPano:PoseRollDegrees>0</GPano:PoseRollDegrees>
     </rdf:Description>
