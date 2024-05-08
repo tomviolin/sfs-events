@@ -1,0 +1,35 @@
+[
+	{
+		"id": "marker1",
+		"position": {"yaw": 6.252, "pitch": 0.0490},
+		"image": "panopinsmall.png",
+		"size": {"width": 40, "height": 60},
+		"anchor": "bottom center",
+		"tooltip": "left-side display screen"
+	},
+	{
+		"id": "marker2",
+		"position": {"yaw": 1.3188, "pitch": -0.07},
+		"image": "panopinsmall.png",
+		"size": {"width": 40, "height": 60},
+		"anchor": "bottom center",
+		"tooltip": "To Room 3093 [go LEFT]"
+	},
+	{
+		"id": "marker3",
+		"position": {"yaw": 0.312, "pitch": 0.0746},
+		"image": "panopinsmall.png",
+		"size": {"width": 40, "height": 60},
+		"anchor": "bottom center",
+		"tooltip": "Right-side display screen"
+	},
+	{
+		"id": "marker4",
+		"position": {"yaw": 0.110, "pitch": -0.099},
+		"image": "panopinsmallred.png",
+		"size": {"width": 40, "height": 60},
+		"anchor": "bottom center",
+		"tooltip": "Audiovisual cart"
+	}
+
+]
