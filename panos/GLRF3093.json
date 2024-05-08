@@ -2,7 +2,7 @@
 	{
 		"id": "marker1",
 		"position": {"yaw": 4.460, "pitch": 0.0335},
-		"image": "panopindirections_up.png",
+		"image": "panopindirections_down.png",
 		"size": {"width": 67, "height": 60},
 		"anchor": "bottom center",
 		"tooltip": "Elevator to main entrance and other floors"
