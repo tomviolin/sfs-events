@@ -2,18 +2,19 @@
 	{
 		"id": "marker1",
 		"position": {"yaw": 4.460, "pitch": 0.0335},
-		"image": "panopinsmall.png",
-		"size": {"width": 40, "height": 60},
+		"image": "panopindirections_up.png",
+		"size": {"width": 67, "height": 60},
 		"anchor": "bottom center",
 		"tooltip": "Elevator to main entrance and other floors"
 	},
 	{
 		"id": "marker2",
 		"position": {"yaw": 2.8175, "pitch": 0.051},
-		"image": "panopinsmall.png",
-		"size": {"width": 40, "height": 60},
-		"anchor": "bottom center",
-		"tooltip": "Room 3080"
+		"image": "panopindirections_right.png",
+		"size": {"width": 67, "height": 60},
+		"anchor": "center right",
+		"tooltip": "Room 3080",
+		"_sfs_link": "#GLRF3080-1"
 	},
 	{
 		"id": "marker3",
@@ -30,6 +31,14 @@
 		"size": {"width": 40, "height": 60},
 		"anchor": "bottom center",
 		"tooltip": "Touchscreen display, controls <b>Display Screen</b>, camera, speakers, and microphone"
+	},
+	{
+		"id": "marker5",
+		"position": {"yaw": 5.929, "pitch": 0.1761},
+		"image": "panopinsmallred.png",
+		"size": {"width": 40, "height": 60},
+		"anchor": "bottom center",
+		"tooltip": "Large Presentation Display Screen"
 	}
 
 ]

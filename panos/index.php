@@ -69,6 +69,20 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 	}
     };
     xhr.send(null);
+
+    window.viewer.plugins.markers.addEventListener('select-marker', function(marker) {
+	    console.log('Marker selected:');
+	    console.log(marker);
+	    if (marker.marker.config._sfs_link) {
+		    if (marker.marker.config._sfs_link.startsWith('http')) {
+			    window.open(marker.marker.config._sfs_link, '_blank');
+		    } else if (marker.marker.config._sfs_link.startsWith('#')) {
+			    window.open(document.location.pathname + marker.marker.config._sfs_link, '_blank');
+		    }
+	    }
+    });
+
+
 })();    
 
 </script>

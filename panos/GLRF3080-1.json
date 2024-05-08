@@ -10,10 +10,11 @@
 	{
 		"id": "marker2",
 		"position": {"yaw": 1.3188, "pitch": -0.07},
-		"image": "panopinsmall.png",
+		"image": "panopindirections_left.png",
 		"size": {"width": 40, "height": 60},
 		"anchor": "bottom center",
-		"tooltip": "To Room 3093 [go LEFT]"
+		"tooltip": "To Room 3093 [go LEFT]",
+		"_sfs_link": "#GLRF3093"
 	},
 	{
 		"id": "marker3",
