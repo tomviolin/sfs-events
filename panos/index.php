@@ -6,6 +6,14 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 ?><!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+		$psv-skin-background-image: url('SFS_Background_wallpaper.png');
+		$psv-main-background-image: url('SFS_Background_wallpaper.png');
+		#viewer {
+		    background-image: url('SFS_Background_wallpaper.png');
+		}
+	</style>
+			
     <!-- for optimal display on high DPI devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -20,9 +28,9 @@ header("Cross-Origin-Resource-Policy: cross-origin");
     {
         "imports": {
             "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
-            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
-	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin/index.module.js",
-	    "@photo-sphere-viewer/markers": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin/index.module.js"
+            "@photo-sphere-viewer/core": "./psv/core/index.module.js",
+	    "@photo-sphere-viewer/visible-range": "./psv/visible-range-plugin/index.module.js",
+	    "@photo-sphere-viewer/markers": "./psv/markers-plugin/index.module.js"
         }
     }
 </script>
@@ -47,7 +55,9 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 	]
 	    	
     });
-
+    window.Viewer = Viewer;
+    console.log('Viewer created:');
+    console.log(viewer);
     function addMarkers(data) {
 	    viewer.plugins.markers.clearMarkers();
 	    data.forEach(function(marker) {

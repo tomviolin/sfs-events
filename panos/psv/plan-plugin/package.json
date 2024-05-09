@@ -1,0 +1,35 @@
+{
+  "name": "@photo-sphere-viewer/plan-plugin",
+  "version": "5.7.3",
+  "description": "Photo Sphere Viewer plugin to add a geographic map (via Leaftlet).",
+  "keywords": [
+    "photosphere",
+    "panorama",
+    "threejs",
+    "map",
+    "leaflet",
+    "cartography"
+  ],
+  "homepage": "https://photo-sphere-viewer.js.org/plugins/plan",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mistic100/Photo-Sphere-Viewer.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Damien 'Mistic' Sorel",
+    "email": "contact@git.strangeplanet.fr",
+    "homepage": "https://www.strangeplanet.fr"
+  },
+  "main": "index.cjs",
+  "module": "index.module.js",
+  "types": "index.d.ts",
+  "style": "index.css",
+  "sass": "index.scss",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "peerDependencies": {
+    "@photo-sphere-viewer/core": "5.7.3"
+  }
+}

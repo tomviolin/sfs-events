@@ -1,0 +1,29 @@
+{
+  "name": "@photo-sphere-viewer/virtual-tour-plugin",
+  "version": "5.7.3",
+  "description": "Photo Sphere Viewer plugin to create virtual tours by linking multiple panoramas.",
+  "keywords": [
+    "photosphere",
+    "panorama",
+    "threejs"
+  ],
+  "homepage": "https://photo-sphere-viewer.js.org/plugins/virtual-tour",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mistic100/Photo-Sphere-Viewer.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Damien 'Mistic' Sorel",
+    "email": "contact@git.strangeplanet.fr",
+    "homepage": "https://www.strangeplanet.fr"
+  },
+  "main": "index.cjs",
+  "module": "index.module.js",
+  "types": "index.d.ts",
+  "style": "index.css",
+  "sass": "index.scss",
+  "peerDependencies": {
+    "@photo-sphere-viewer/core": "5.7.3"
+  }
+}
