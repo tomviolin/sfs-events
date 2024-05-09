@@ -7,10 +7,9 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 <html>
 <head>
 	<style type="text/css">
-		$psv-skin-background-image: url('SFS_Background_wallpaper.png');
-		$psv-main-background-image: url('SFS_Background_wallpaper.png');
-		#viewer {
-		    background-image: url('SFS_Background_wallpaper.png');
+		img {
+		  draggable: false;
+		user-drag: none;
 		}
 	</style>
 			
@@ -22,7 +21,13 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 </head>
 <body style="border:0; margin: 0; padding: 0; overflow: hidden;">
 <!-- the viewer container must have a defined size -->
-<div id="viewer" style="height: 100vh; width:100vw;"></div>
+<div id="viewer" style="height: 100vh; width:100vw;">
+<img draggable="false" id="panleft" src="panleft.png" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); cursor: pointer; z-index: 1000;">
+<img draggable="false" id="panright" src="panright.png" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); cursor: pointer; z-index: 1000;">
+<div style="position: absolute; top: 0; left: 0; z-index: 1000;">
+	<a href="https://uwm.edu/freshwater"><img src="uwmsfs.png" style="height: 200px;"></a>
+</div>
+<div id="title" style="position: absolute; top: 0; right: 25vw; width:50vw; text-align: center; z-index: 1000; padding: 10px; font-size: 50px; font-family: Helvetica,Arial,sans-serif; color: #ffbd00; font-weight: bold;"></div>
 
 <script type="importmap">
     {
@@ -36,15 +41,43 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 </script>
 <!-- //	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin/index.module.js"
 -->
+
+
+<script>
+var animator = null;
+function downRight() {
+	if (animator) {
+		animator.cancel();
+	}
+	animator = viewer.animate({speed:'3rpm', yaw: viewer.getPosition().yaw+3.0, pitch: viewer.getPosition().pitch });
+}
+function upRight() {
+	animator.cancel();
+}
+function downLeft() {
+	if (animator) {
+		animator.cancel();
+	}
+	animator = viewer.animate({speed:'3rpm', yaw: viewer.getPosition().yaw-3.0, pitch: viewer.getPosition().pitch });
+}
+function upLeft() {
+	animator.cancel();
+}
+</script>
 <script type="module">
+
     import { Viewer } from '@photo-sphere-viewer/core';
+    import { EquirectangularAdapter } from '@photo-sphere-viewer/core';
     import { VisibleRangePlugin } from '@photo-sphere-viewer/visible-range';
     import { MarkersPlugin } from '@photo-sphere-viewer/markers';
     //window.Viewer = Viewer;
     const viewer = new Viewer({
+    adapter: [EquirectangularAdapter, {
+    	}],
         container: document.querySelector('#viewer'),
         panorama: document.location.pathname + '/' + document.location.hash.substr(1)+'.jpg?refresh='+Math.random(),
 	//defaultYaw : '180deg',
+	defaultZoomLvl: 75,
 	plugins: [
 			[VisibleRangePlugin, {
 				setRangesFromPanoData: true,
@@ -61,7 +94,7 @@ header("Cross-Origin-Resource-Policy: cross-origin");
     function addMarkers(data) {
 	    viewer.plugins.markers.clearMarkers();
 	    data.forEach(function(marker) {
-		    data.image = document.location.pathname + '/' + marker.image;
+		    data.imageLayer = document.location.pathname + '/' + marker.image;
 		viewer.plugins.markers.addMarker(marker);
 	    });
     }
@@ -92,9 +125,18 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 	    }
     });
 
+    var titlebox = document.getElementById('title');
+    titlebox.innerHTML = document.location.hash.substr(1).replace(/_/g, ' ').replace('GLRF','Room ');
 
 })();    
-
+var panleft = document.getElementById('panleft');
+var panright = document.getElementById('panright');
+panleft.addEventListener('mousedown', downLeft);
+panleft.addEventListener('mouseup', upLeft);
+panright.addEventListener('mousedown', downRight);
+panright.addEventListener('mouseup', upRight);
+panleft.addEventListener('mouseout', upLeft);
+panright.addEventListener('mouseout', upRight);
 </script>
 </body>
 </html>
