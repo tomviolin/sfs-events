@@ -2087,6 +2087,17 @@ var EquirectangularAdapter = class extends AbstractAdapter {
     const b = binary.indexOf("</x:xmpmeta>");
     const data = binary.substring(a, b);
     if (a !== -1 && b !== -1 && data.includes("GPano:")) {
+	console.log(data);
+	var fullHeight = getXMPValue(data, "FullPanoHeightPixels");
+	var croppedHeight = getXMPValue(data, "CroppedAreaImageHeightPixels");
+	
+	//var fovH = getXMPValue(data, "User Comment").split("FOV: ")[1].split('.')[0].split(" x ")[0];
+	//var fovV = getXMPValue(data, "UserComment").split("FOV: ")[1].split('.')[0].split(" x ")[1];
+	//const minZoom = 30;
+	//const maxZoom = 90;
+	//const defaultZoomLvlDegrees = fovV;
+	// default zoom level is number from zero (minZoom) to 100 (maxZoom)
+	//const defaultZoomLvl = (defaultZoomLvlDegrees - minZoom) / (maxZoom - minZoom) * 100;
       return {
         isEquirectangular: true,
         fullWidth: getXMPValue(data, "FullPanoWidthPixels"),
@@ -2097,7 +2108,9 @@ var EquirectangularAdapter = class extends AbstractAdapter {
         croppedY: getXMPValue(data, "CroppedAreaTopPixels"),
         poseHeading: getXMPValue(data, "PoseHeadingDegrees"),
         posePitch: getXMPValue(data, "PosePitchDegrees"),
-        poseRoll: getXMPValue(data, "PoseRollDegrees")
+        poseRoll: getXMPValue(data, "PoseRollDegrees"),
+	defaultZoomLvl: getXMPValue(data,"InitialVerticalFOVDegrees") 
+	//defaultZoomLvl: defaultZoomLvl
       };
     }
     return null;
