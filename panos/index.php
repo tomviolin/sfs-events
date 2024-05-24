@@ -35,7 +35,8 @@ header("Cross-Origin-Resource-Policy: cross-origin");
             "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
             "@photo-sphere-viewer/core": "./psv/core/index.module.js",
 	    "@photo-sphere-viewer/visible-range": "./psv/visible-range-plugin/index.module.js",
-	    "@photo-sphere-viewer/markers": "./psv/markers-plugin/index.module.js"
+	    "@photo-sphere-viewer/markers": "./psv/markers-plugin/index.module.js",
+	    "@photo-sphere-viewer/autorotate": "./psv/autorotate-plugin/index.module.js"
         }
     }
 </script>
@@ -70,6 +71,7 @@ function upLeft() {
     import { EquirectangularAdapter } from '@photo-sphere-viewer/core';
     import { VisibleRangePlugin } from '@photo-sphere-viewer/visible-range';
     import { MarkersPlugin } from '@photo-sphere-viewer/markers';
+    import { AutorotatePlugin } from '@photo-sphere-viewer/autorotate';
     //window.Viewer = Viewer;
     const viewer = new Viewer({
     adapter: [EquirectangularAdapter, {
@@ -85,8 +87,13 @@ function upLeft() {
   			}],
 			[MarkersPlugin, {
 			}],
+			[AutorotatePlugin, {
+				autorotateSpeed: '0rpm',
+				autostartDelay: 50000,
+				autostartOnIdle: false
+    			}],
+
 	]
-	    	
     });
     window.Viewer = Viewer;
     console.log('Viewer created:');
@@ -132,9 +139,9 @@ function upLeft() {
 var panleft = document.getElementById('panleft');
 var panright = document.getElementById('panright');
 panleft.addEventListener('mousedown', downLeft);
-panleft.addEventListener('mouseup', upLeft);
+//panleft.addEventListener('mouseup', upLeft);
 panright.addEventListener('mousedown', downRight);
-panright.addEventListener('mouseup', upRight);
+//panright.addEventListener('mouseup', upRight);
 panleft.addEventListener('mouseout', upLeft);
 panright.addEventListener('mouseout', upRight);
 </script>

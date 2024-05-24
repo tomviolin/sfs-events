@@ -1635,12 +1635,12 @@ var SYSTEM = {
   /**
    * @internal
    */
-  __maxCanvasWidth: 16384,
+  __maxCanvasWidth: null,
   /**
    * Maximum canvas width
    */
   get maxCanvasWidth() {
-    if (false && this.__maxCanvasWidth === null) {
+    if (this.__maxCanvasWidth === null) {
       this.__maxCanvasWidth = getMaxCanvasWidth(this.maxTextureWidth);
     }
     return this.__maxCanvasWidth;
@@ -1719,25 +1719,46 @@ function isTouchEnabled() {
   });
   return { initial, promise };
 }
+
+
 function getMaxCanvasWidth(maxWidth) {
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
-  canvas.width = maxWidth;
-  canvas.height = maxWidth / 2;
-  while (canvas.width > 1024) {
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, 1, 1);
-    try {
-      if (ctx.getImageData(0, 0, 1, 1).data[0] > 0) {
-        return canvas.width;
-      }
-    } catch (e) {
+    let width = maxWidth;
+    let pass = false;
+
+    while (width > 1024 && !pass) {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = width;
+        canvas.height = width / 2;
+
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, 1, 1);
+
+        try {
+            if (ctx.getImageData(0, 0, 1, 1).data[0] > 0) {
+                pass = true;
+            }
+        } catch (e) {
+            // continue
+        }
+
+        // Release canvas elements (Safari memory usage fix)
+        // https://stackoverflow.com/questions/52532614/total-canvas-memory-use-exceeds-the-maximum-limit-safari-12
+        canvas.width = 0;
+        canvas.height = 0;
+
+        if (!pass) {
+            width /= 2;
+        }
     }
-    canvas.width /= 2;
-    canvas.height /= 2;
-  }
-  throw new PSVError("Unable to detect system capabilities");
+
+    if (pass) {
+        return width;
+    } else {
+        throw new PSVError('Unable to detect system capabilities');
+    }
 }
+
 function getFullscreenEvent() {
   if ("exitFullscreen" in document) {
     return "fullscreenchange";
