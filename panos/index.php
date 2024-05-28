@@ -25,8 +25,8 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 <body style="border:0; margin: 0; padding: 0; overflow: hidden;">
 	<!-- the viewer container must have a defined size -->
 	<div id="viewer" style="height: 100vh; width:100vw;">
-		<img draggable="false" id="panleft" src="panleft.png" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); cursor: pointer; z-index: 1000;">
-		<img draggable="false" id="panright" src="panright.png" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); cursor: pointer; z-index: 1000;">
+		<img draggable="false" id="panleft" src="panleft.png" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); cursor: pointer; z-index: 1000;" class="psv-move-button">
+		<img draggable="false" id="panright" src="panright.png" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); cursor: pointer; z-index: 1000;" class="psv-move-button">
 		<div style="position: absolute; top: 0; left: 0; z-index: 1000;">
 			<a href="https://uwm.edu/freshwater"><img src="uwmsfs.png" style="height: 200px;"></a>
 		</div>
@@ -46,35 +46,6 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 	<script>
 		var animator = null;
 
-		function downRight() {
-			if (animator) {
-				animator.cancel();
-			}
-			animator = viewer.animate({
-				speed: '3rpm',
-				yaw: viewer.getPosition().yaw + 3.0,
-				pitch: viewer.getPosition().pitch
-			});
-		}
-
-		function upRight() {
-			animator.cancel();
-		}
-
-		function downLeft() {
-			if (animator) {
-				animator.cancel();
-			}
-			animator = viewer.animate({
-				speed: '3rpm',
-				yaw: viewer.getPosition().yaw - 3.0,
-				pitch: viewer.getPosition().pitch
-			});
-		}
-
-		function upLeft() {
-			animator.cancel();
-		}
 	</script>
 	<script type="module">
 		import {
@@ -111,7 +82,7 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 			const viewerConfig = {
 				adapter: [EquirectangularAdapter, {}],
 				container: document.querySelector('#viewer'),
-				panorama: document.location.pathname + '/' + document.location.hash.substr(1) + '.jpg?refresh=' + Math.random(),
+				panorama: document.location.pathname + document.location.hash.substr(1) + '.jpg?refresh=' + Math.random(),
 				//defaultYaw : '180deg',
 				defaultZoomLvl: 70,
 				plugins: [
@@ -128,50 +99,100 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 				],
 
 			};
-			Object.assign(viewerConfig,JSONData.viewerConfig);
+			// load panorama as image
+			var img = new Image();
+			img.src = viewerConfig.panorama;
+			img.onload = function() {
+				console.log('Panorama loaded:');
+				console.log("dimensions: "+img.width+"x"+img.height);
 
-			const viewer = new Viewer(viewerConfig);
-			window.viewer = viewer;
-			console.log('Viewer created:');
-			console.log(viewer);
+				viewerConfig.panoData = {
+					fullWidth: img.width,
+					fullHeight: img.width / 2,
+					croppedWidth: img.width,
+					croppedHeight: img.height,
+					croppedX: 0,
+					croppedY: (img.width / 4) - img.height/2
+				};
+				Object.assign(viewerConfig,JSONData.viewerConfig);
+				console.log("viewerConfig:");
+				console.log(viewerConfig);
+				const viewer = new Viewer(viewerConfig);
+				window.viewer = viewer;
+				console.log('Viewer created:');
+				console.log(viewer);
 
-			/*
-			viewer.plugins.markers.clearMarkers();
-			JSONData.markers.forEach(function(marker) {
-				data.imageLayer = document.location.pathname + '/' + marker.image;
-				viewer.plugins.markers.addMarker(marker);
-			});
-			*/
+				/*
+				viewer.plugins.markers.clearMarkers();
+				JSONData.markers.forEach(function(marker) {
+					data.imageLayer = document.location.pathname + '/' + marker.image;
+					viewer.plugins.markers.addMarker(marker);
+				});
+				*/
 
-			// set event listener to retrieve the clicked position on the panorama
-			viewer.addEventListener('click', (data) => {
-				console.log(`${data.rightclick ? 'right ' : ''} clicked at yaw: ${data.yaw} pitch: ${data.pitch}`);
-			});
+				// set event listener to retrieve the clicked position on the panorama
+				viewer.addEventListener('click', (data) => {
+					console.log(`${data.rightclick ? 'right ' : ''} clicked at yaw: ${data.yaw} pitch: ${data.pitch}`);
+				});
 
-			window.viewer = viewer;
-			window.viewer.plugins.markers.addEventListener('select-marker', function(marker) {
-				console.log('Marker selected:');
-				console.log(marker);
-				if (marker.marker.config._sfs_link) {
-					if (marker.marker.config._sfs_link.startsWith('http')) {
-						window.open(marker.marker.config._sfs_link, '_blank');
-					} else if (marker.marker.config._sfs_link.startsWith('#')) {
-						window.open(document.location.pathname + marker.marker.config._sfs_link, '_blank');
+				window.viewer = viewer;
+				window.viewer.plugins.markers.addEventListener('select-marker', function(marker) {
+					console.log('Marker selected:');
+					console.log(marker);
+					if (marker.marker.config._sfs_link) {
+						if (marker.marker.config._sfs_link.startsWith('http')) {
+							window.open(marker.marker.config._sfs_link, '_blank');
+						} else if (marker.marker.config._sfs_link.startsWith('#')) {
+							window.open(document.location.pathname + marker.marker.config._sfs_link, '_blank');
+						}
 					}
-				}
-			});
-			console.log(viewer);
-			var titlebox = document.getElementById('title');
-			titlebox.innerHTML = document.location.hash.substr(1).replace(/_/g, ' ').replace('GLRF', 'Room ');
+				});
+				console.log(viewer);
+				var titlebox = document.getElementById('title');
+				titlebox.innerHTML = document.location.hash.substr(1).replace(/_/g, ' ').replace('GLRF', 'Room ');
 
-			var panleft = document.getElementById('panleft');
-			var panright = document.getElementById('panright');
-			panleft.addEventListener('mousedown', downLeft);
-			//panleft.addEventListener('mouseup', upLeft);
-			panright.addEventListener('mousedown', downRight);
-			//panright.addEventListener('mouseup', upRight);
-			panleft.addEventListener('mouseout', upLeft);
-			panright.addEventListener('mouseout', upRight);
+				var panleft = document.getElementById('panleft');
+				var panright = document.getElementById('panright');
+				var psv_left  = document.querySelectorAll('.psv-move-button[title="Move left"]')[0]
+				var psv_right = document.querySelectorAll('.psv-move-button[title="Move right"]')[0]
+
+				// events to be dispatched on the buttons
+				var events = ['mousedown'];
+				events.forEach(function(event) {
+					panleft.addEventListener(event, function(e) {
+						console.log("left");
+						var evt = new Event(event);
+						console.log(evt);
+						psv_left.dispatchEvent(evt);
+						console.log(evt);
+					});
+					panright.addEventListener(event, function(e) {
+						console.log("right");
+						var evt = new Event(event);
+						console.log(evt);
+						psv_right.dispatchEvent(evt);
+						console.log(evt);
+					});
+				});
+				// events to be dispatched on the container
+				var events = ['keydown', 'keyup', 'mouseup','touchend','click'];
+				events.forEach(function(event) {
+					panleft.addEventListener(event, function(e) {
+						console.log("left to container");
+						var evt = new Event(event);
+						console.log(evt);
+						window.viewer.container.dispatchEvent(evt);
+						console.log(evt);
+					});
+					panright.addEventListener(event, function(e) {
+						console.log("right to container");
+						var evt = new Event(event);
+						console.log(evt);
+						window.viewer.container.dispatchEvent(evt);
+						console.log(evt);
+					});
+				});
+			};
 		}
 		(function() {
 			console.log("main!");
