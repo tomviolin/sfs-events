@@ -1,6 +1,9 @@
 {
 	"viewerConfig": {
-		"defaultZoomLvl":70
+		"defaultZoomLvl":70,
+		"panoData": {
+			"poseHeading": 110
+		}
 	},
 	"markers": [
 	]

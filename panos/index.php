@@ -45,6 +45,15 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 	</script>
 	<script>
 		var animator = null;
+		var PANOHASH = document.location.hash.substr(1);
+		var panoparts = PANOHASH.split("@");
+		var PANOBASE = panoparts[0]
+		var PANOANGLE = null;
+		if (panoparts.length > 1) {
+			PANOANGLE = parseFloat(panoparts[1]);
+		} else {
+			PANOANGLE = null;
+		}
 
 	</script>
 	<script type="module">
@@ -69,7 +78,7 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 		async function main() {
 			// establish the environment
 			// read json file
-			var requestURL = document.location.pathname + document.location.hash.substr(1) + '.json?refresh=' + Math.random();
+			var requestURL = document.location.pathname + PANOBASE + '.json?refresh=' + Math.random();
 			const response = await fetch(requestURL);
 			response.json().then((data)=> {
 				console.log(data);
@@ -82,7 +91,7 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 			const viewerConfig = {
 				adapter: [EquirectangularAdapter, {}],
 				container: document.querySelector('#viewer'),
-				panorama: document.location.pathname + document.location.hash.substr(1) + '.jpg?refresh=' + Math.random(),
+				panorama: document.location.pathname + PANOBASE + '.jpg?refresh=' + Math.random(),
 				//defaultYaw : '180deg',
 				defaultZoomLvl: 70,
 				plugins: [
@@ -105,18 +114,24 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 			img.onload = function() {
 				console.log('Panorama loaded:');
 				console.log("dimensions: "+img.width+"x"+img.height);
-
-				viewerConfig.panoData = {
+				Object.assign(viewerConfig,JSONData.viewerConfig);
+				if (viewerConfig.panoData == null) {
+					viewerConfig.panoData = {};
+				}
+				Object.assign(viewerConfig.panoData, {
 					fullWidth: img.width,
 					fullHeight: img.width / 2,
 					croppedWidth: img.width,
 					croppedHeight: img.height,
 					croppedX: 0,
 					croppedY: (img.width / 4) - img.height/2
-				};
-				Object.assign(viewerConfig,JSONData.viewerConfig);
+				});
 				console.log("viewerConfig:");
 				console.log(viewerConfig);
+				// last minute PANOANGLE override
+				if (PANOANGLE != null) {
+					viewerConfig.panoData.poseHeading = PANOANGLE;
+				}
 				const viewer = new Viewer(viewerConfig);
 				window.viewer = viewer;
 				console.log('Viewer created:');
@@ -132,7 +147,18 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 
 				// set event listener to retrieve the clicked position on the panorama
 				viewer.addEventListener('click', (data) => {
-					console.log(`${data.rightclick ? 'right ' : ''} clicked at yaw: ${data.yaw} pitch: ${data.pitch}`);
+					console.log(data);
+					console.log(`${data.data.rightclick ? 'right ' : ''} clicked at yaw: ${data.data.yaw} pitch: ${data.data.pitch}`);
+					var json_marker=`                {
+                        "id": "marker3",
+                        "position": {"yaw": ${data.data.yaw}, "pitch": ${data.data.pitch}},
+                        "image": "panopinshimmer.png",
+                        "size": {"width": 16, "height": 24},
+                        "anchor": "bottom center",
+                        "tooltip": "Switch to raise/lower window blinds"
+                },
+				});\n`;
+					console.log(json_marker);
 				});
 
 				window.viewer = viewer;
@@ -149,7 +175,7 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 				});
 				console.log(viewer);
 				var titlebox = document.getElementById('title');
-				titlebox.innerHTML = document.location.hash.substr(1).replace(/_/g, ' ').replace('GLRF', 'Room ');
+				titlebox.innerHTML = PANOBASE.replace(/_/g, ' ').replace('GLRF', 'Room ');
 
 				var panleft = document.getElementById('panleft');
 				var panright = document.getElementById('panright');
