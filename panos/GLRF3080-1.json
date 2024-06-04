@@ -3,7 +3,7 @@
 	{
 		"id": "marker1",
 		"position": {"yaw": 6.252, "pitch": 0.0490},
-		"image": "panopinsmall.png",
+		"image": "panpintinygoldanshim.gif",
 		"size": {"width": 40, "height": 60},
 		"anchor": "bottom center",
 		"tooltip": "left-side display screen"
@@ -20,7 +20,7 @@
 	{
 		"id": "marker3",
 		"position": {"yaw": 0.312, "pitch": 0.0746},
-		"image": "panopinsmall.png",
+		"image": "panpintinygoldanshim.gif",
 		"size": {"width": 40, "height": 60},
 		"anchor": "bottom center",
 		"tooltip": "Right-side display screen"
@@ -28,7 +28,7 @@
 	{
 		"id": "marker4",
 		"position": {"yaw": 0.110, "pitch": -0.099},
-		"image": "panopinsmallred.png",
+		"image": "panpintinygoldanshim.gif",
 		"size": {"width": 40, "height": 60},
 		"anchor": "bottom center",
 		"tooltip": "Audiovisual cart"

@@ -23,7 +23,7 @@
 		{
 			"id": "marker3",
 			"position": {"yaw": 1.361, "pitch": 0.0097},
-			"image": "panopinshimmer.gif",
+			"image": "panpintinygoldanishim.gif",
 			"size": {"width": 16, "height": 24},
 			"anchor": "bottom center",
 			"tooltip": "Switch to raise/lower window blinds"
@@ -31,7 +31,7 @@
 		{
 			"id": "marker4",
 			"position": {"yaw": 6.105, "pitch": 0.0893},
-			"image": "panopinshimmer.gif",
+			"image": "panpintinygoldanishim.gif",
 			"size": {"width": 16, "height": 24},
 			"anchor": "bottom center",
 			"tooltip": "Touchscreen display, controls <b>Display Screen</b>, camera, speakers, and microphone"
@@ -39,7 +39,7 @@
 		{
 			"id": "marker5",
 			"position": {"yaw": 5.929, "pitch": 0.1761},
-			"image": "panopinshimmer.gif",
+			"image": "panpintinygoldanishim.gif",
 			"size": {"width": 16, "height": 24},
 			"anchor": "bottom center",
 			"tooltip": "Large Presentation Display Screen"
