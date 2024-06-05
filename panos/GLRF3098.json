@@ -1,5 +1,8 @@
 {
     "viewerConfig": {
         "defaultZoomLvl": 40
+    },
+    "panoData": {
+	"croppedWidth": 3000
     }
 }
