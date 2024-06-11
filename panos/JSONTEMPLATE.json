@@ -1,0 +1,8 @@
+{
+    "viewerConfig": {
+	"defaultZoomLvl": 60,
+        "panoData": {
+            "poseHeading": 220
+        }
+    }
+}
