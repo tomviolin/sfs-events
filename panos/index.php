@@ -33,15 +33,15 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 		<div id="title" style="position: absolute; top: 0; right: 25vw; width:50vw; text-align: center; z-index: 1000; padding: 10px; font-size: 50px; font-family: Helvetica,Arial,sans-serif; color: #ffbd00; font-weight: bold;"></div>
 	</div>
 	<script type="importmap">
-		{
-	        "imports": {
-	       	    "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
-	            "@photo-sphere-viewer/core": "./psv/core/index.module.js",
-			    "@photo-sphere-viewer/visible-range": "./psv/visible-range-plugin/index.module.js",
-	   			"@photo-sphere-viewer/markers": "./psv/markers-plugin/index.module.js",
-		    	"@photo-sphere-viewer/autorotate": "./psv/autorotate-plugin/index.module.js"
+	{
+        "imports": {
+       	    "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core":          "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
+	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin/index.module.js",
+	    "@photo-sphere-viewer/markers":       "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin/index.module.js",
+	    "@photo-sphere-viewer/autorotate":    "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin/index.module.js"
 	        }
-		}
+	}
 	</script>
 	<script>
 		var animator = null;

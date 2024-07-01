@@ -1,0 +1,71 @@
+<?xpacket begin='﻿' id='W5M0MpCehiHzreSzNTczkc9d'?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='Image::ExifTool 12.40'>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+ <rdf:Description rdf:about=''
+  xmlns:exif='http://ns.adobe.com/exif/1.0/'>
+  <exif:ColorSpace>1</exif:ColorSpace>
+  <exif:ComponentsConfiguration>
+   <rdf:Seq>
+    <rdf:li>1</rdf:li>
+    <rdf:li>2</rdf:li>
+    <rdf:li>3</rdf:li>
+    <rdf:li>0</rdf:li>
+   </rdf:Seq>
+  </exif:ComponentsConfiguration>
+  <exif:DateTimeOriginal>2024-06-20T15:27:29</exif:DateTimeOriginal>
+  <exif:ExifVersion>0232</exif:ExifVersion>
+  <exif:FlashpixVersion>0100</exif:FlashpixVersion>
+  <exif:UserComment>
+   <rdf:Alt>
+    <rdf:li xml:lang='x-default'>
+Projection: Cylindrical (1)
+FOV: 360 x 55
+Ev: 6.23</rdf:li>
+   </rdf:Alt>
+  </exif:UserComment>
+ </rdf:Description>
+
+ <rdf:Description rdf:about=''
+  xmlns:exifEX='http://cipa.jp/exif/1.0/'>
+  <exifEX:CameraOwnerName/>
+  <exifEX:CompositeImage>2</exifEX:CompositeImage>
+ </rdf:Description>
+
+ <rdf:Description rdf:about=''
+  xmlns:tiff='http://ns.adobe.com/tiff/1.0/'>
+  <tiff:BitsPerSample>
+   <rdf:Seq>
+    <rdf:li>8</rdf:li>
+   </rdf:Seq>
+  </tiff:BitsPerSample>
+  <tiff:ImageDescription>
+   <rdf:Alt>
+    <rdf:li xml:lang='x-default'>                               </rdf:li>
+   </rdf:Alt>
+  </tiff:ImageDescription>
+  <tiff:ImageLength>804</tiff:ImageLength>
+  <tiff:ImageWidth>5250</tiff:ImageWidth>
+  <tiff:Make>Canon</tiff:Make>
+  <tiff:Model>Canon PowerShot SX260 HS</tiff:Model>
+  <tiff:ResolutionUnit>1</tiff:ResolutionUnit>
+  <tiff:Software>Hugin 2023.0.0.d88dc56ded0e</tiff:Software>
+  <tiff:XResolution>1/1</tiff:XResolution>
+  <tiff:YCbCrPositioning>1</tiff:YCbCrPositioning>
+  <tiff:YCbCrSubSampling>
+   <rdf:Seq>
+    <rdf:li>1</rdf:li>
+    <rdf:li>1</rdf:li>
+   </rdf:Seq>
+  </tiff:YCbCrSubSampling>
+  <tiff:YResolution>1/1</tiff:YResolution>
+ </rdf:Description>
+
+ <rdf:Description rdf:about=''
+  xmlns:xmp='http://ns.adobe.com/xap/1.0/'>
+  <xmp:CreateDate>2024-06-20T15:27:29</xmp:CreateDate>
+  <xmp:ModifyDate>2024-06-20T15:27:29</xmp:ModifyDate>
+ </rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+<?xpacket end='w'?>
