@@ -35,13 +35,12 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 	<script type="importmap">
 	{
         "imports": {
-       	    "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
-            "@photo-sphere-viewer/core":          "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
-	    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin/index.module.js",
-	    "@photo-sphere-viewer/markers":       "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin/index.module.js",
-	    "@photo-sphere-viewer/autorotate":    "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin/index.module.js"
->>>>>>> 72f988fb05115f848ee8e39488a53a1406c020ce
-	        }
+       	    "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+            "@photo-sphere-viewer/core":          "./psv/core/index.module.js",
+	    "@photo-sphere-viewer/visible-range": "./psv/visible-range-plugin/index.module.js",
+	    "@photo-sphere-viewer/markers":       "./psv/markers-plugin/index.module.js",
+	    "@photo-sphere-viewer/autorotate":    "./psv/autorotate-plugin/index.module.js"
+        }
 	}
 	</script>
 	<script>
