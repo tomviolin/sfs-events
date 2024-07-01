@@ -1,1 +1,16 @@
-{}
+{
+    "viewerConfig": {
+	"defaultZoomLvl": 60,
+        "panoData": {
+            "poseHeading": 220
+        }
+    },
+    "markers": [ {
+	"id": "marker3",
+	"position": {"yaw": 4.542623475985879, "pitch": -0.013391924339286376},
+	"image": "panpintinygoldanishim.gif",
+	"size": {"width": 16, "height": 24},
+	"anchor": "bottom center",
+	"tooltip": "Switch to raise/lower window blinds"
+    }]
+}
