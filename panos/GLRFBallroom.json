@@ -2,13 +2,13 @@
     "viewerConfig": {
 	"defaultZoomLvl": 60,
         "panoData": {
-            "poseHeading":180 
+            "poseHeading":0 
         }
     },
     "markers": [{
 	"id": "marker3",
-	"position": {"yaw": 0.40016652520330857, "pitch": 0.0429},
-	"rotation": "0deg",
+	"position": {"yaw": 0.40016652520330857, "pitch": -0.0559},
+	"rotation": "10deg",
 	"image": "panopindirections_left.png",
 	"size": {"width": 40, "height": 50},
 	"anchor": "bottom center",
