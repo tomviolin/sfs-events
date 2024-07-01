@@ -2,27 +2,28 @@
     "viewerConfig": {
 	"defaultZoomLvl": 60,
         "panoData": {
-            "poseHeading": 0
+            "poseHeading":180 
         }
     },
     "markers": [{
 	"id": "marker3",
-	"position": {"yaw": 0.40016652520330857, "pitch": -0.029927754828947092},
+	"position": {"yaw": 0.40016652520330857, "pitch": 0.0429},
 	"rotation": "0deg",
 	"image": "panopindirections_left.png",
-	"size": {"width": 32, "height": 40},
+	"size": {"width": 40, "height": 50},
 	"anchor": "bottom center",
-	"tooltip": "To Rooms 1099,1084,1080"
+	"tooltip": "To Rooms 1099,1084,1080",
+	"caption": "To Rooms 1099,1084,1080"
     },{
 	"id": "marker4",
-	"position": {"yaw": 5.973973579739714, "pitch": -0.016014833005541185},
+	"position": {"yaw": 5.973973579739714, "pitch": 0.03566},
 	"image": "panpintinygoldanishim.gif",
 	"size": {"width": 16, "height": 24},
 	"anchor": "bottom center",
 	"tooltip": "Presenter Desk"
     },{
 	"id": "marker5",
-	"position": {"yaw": 6.193510204939625, "pitch": 0.03566124205348964},
+	"position": {"yaw": 6.193510204939625, "pitch": -0.0229},
 	"image": "panpintinygoldanishim.gif",
 	"size": {"width": 16, "height": 24},
 	"anchor": "bottom center",

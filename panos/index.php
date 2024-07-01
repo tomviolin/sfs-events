@@ -36,10 +36,10 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 		{
 	        "imports": {
 	       	    "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
-	            "@photo-sphere-viewer/core": "./psv/core/index.module.js",
-			    "@photo-sphere-viewer/visible-range": "./psv/visible-range-plugin/index.module.js",
-	   			"@photo-sphere-viewer/markers": "./psv/markers-plugin/index.module.js",
-		    	"@photo-sphere-viewer/autorotate": "./psv/autorotate-plugin/index.module.js"
+	            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
+			    "@photo-sphere-viewer/visible-range": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin/index.module.js",
+	   			"@photo-sphere-viewer/markers": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin/index.module.js",
+		    	"@photo-sphere-viewer/autorotate": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin/index.module.js"
 	        }
 		}
 	</script>
@@ -152,10 +152,10 @@ header("Cross-Origin-Resource-Policy: cross-origin");
 					var json_marker=`                {
                         "id": "marker3",
                         "position": {"yaw": ${data.data.yaw}, "pitch": ${data.data.pitch}},
-                        "image": "panopinshimmer.png",
+                        "image": "panpintinygoldanishim.gif",
                         "size": {"width": 16, "height": 24},
                         "anchor": "bottom center",
-                        "tooltip": "Switch to raise/lower window blinds"
+                        "tooltip": "Pin Description"
                 },
 				});\n`;
 					console.log(json_marker);
